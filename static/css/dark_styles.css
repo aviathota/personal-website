@@ -1,0 +1,71 @@
+@font-face {
+    font-family: 'Daydream';
+    src: url('../assets/fonts/Daydream.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Pixellari';
+    src: url('../assets/fonts/Pixellari.ttf') format('truetype');
+}
+
+body {
+    background: url('../assets/images/dark_background.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    font-family: 'Courier New', monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.content-box {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 30px 50px;
+    border-radius: 0;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    max-width: 600px;
+    border: 6px solid #702963;
+    image-rendering: pixelated;
+}
+
+.content-box h1 {
+    font-family: 'Daydream', 'Courier New', monospace;
+    font-size: 2.2rem;
+    color: #141414;
+}
+
+.content-box p {
+    font-family: 'Pixellari', 'Courier New', monospace;
+    font-size: 1.3rem;
+    color: #555;
+}
+
+.mode-toggle {
+    font-family: 'Courier New', monospace;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    border: 4px solid #702963;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+    border-radius: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.mode-toggle img {
+    width: 30px;
+    height: 30px;
+}
+
+.mode-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.6);
+}

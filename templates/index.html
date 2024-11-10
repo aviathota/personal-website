@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>avi athota's website</title>
+  
+  <link id="theme-stylesheet" rel="stylesheet" href="{{ url_for('static', filename='css/light_styles.css') if day_mode else url_for('static', filename='css/dark_styles.css') }}">
+</head>
+<body>
+  <div class="content-box">
+    <h1>Welcome to my site!</h1>
+    <p>
+      My name is <b>Avi Athota</b> and I'm a 4th year CS major and Math minor at the Georgia Institute of Technology, with particular interests in Computer Vision and Machine Learning.
+    </p>
+    <p>
+      So what brings you here? Click one of the buttons below:
+    </p>
+  </div>
+
+  <button id="mode-toggle" class="mode-toggle">
+    <img id="toggle-icon" src="{{ url_for('static', filename='assets/icons/moon_icon.png') if day_mode else url_for('static', filename='assets/icons/sun_icon.png') }}" alt="Toggle Mode" />
+  </button>
+
+  <script>
+    const themeStylesheet = document.getElementById('theme-stylesheet');
+    const modeToggleButton = document.getElementById('mode-toggle');
+    const toggleIcon = document.getElementById('toggle-icon');
+
+    let isLightMode = {{ 'true' if day_mode else 'false' }};
+    
+    modeToggleButton.addEventListener('click', () => {
+      isLightMode = !isLightMode;
+      
+      themeStylesheet.setAttribute('href', isLightMode ? 
+        "{{ url_for('static', filename='css/light_styles.css') }}" : 
+        "{{ url_for('static', filename='css/dark_styles.css') }}"
+      );
+      
+      toggleIcon.src = isLightMode ? 
+        "{{ url_for('static', filename='assets/icons/moon_icon.png') }}" : 
+        "{{ url_for('static', filename='assets/icons/sun_icon.png') }}";
+    });
+  </script>
+</body>
+</html>
