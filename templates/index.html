@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>avi athota's website</title>
+  <title>Avi Athota's Website</title>
   
   <link id="theme-stylesheet" rel="stylesheet" href="{{ url_for('static', filename='css/light_styles.css') if day_mode else url_for('static', filename='css/dark_styles.css') }}">
 </head>
@@ -15,6 +15,24 @@
     </p>
     <p>
       So what brings you here? Click one of the buttons below:
+    </p>
+    <div class="button-group">
+      <button class="content-button experience-button">
+        <img src="{{ url_for('static', filename='assets/icons/book_icon.png') }}" alt="Experience Icon" class="button-icon" />
+        Experience
+      </button>
+      <button class="content-button about-me-button">
+        <img src="{{ url_for('static', filename='assets/icons/person_icon.png') }}" alt="About Me Icon" class="button-icon" />
+        About Me
+      </button>
+      <button class="content-button links-button">
+        <img src="{{ url_for('static', filename='assets/icons/link_icon.png') }}" alt="Links Icon" class="button-icon" />
+        My Links
+      </button>
+    </div>
+    <br></br>
+    <p>
+      &copy; 2024 by Avi Athota.
     </p>
   </div>
 

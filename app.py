@@ -9,8 +9,7 @@ def is_daytime():
 
 @app.route("/")
 def home():
-    day_mode = not is_daytime()
-    # print("Initializing " + ("day" if day_mode else "night") + " website mode.")
+    day_mode = is_daytime()
     return render_template("index.html", day_mode=day_mode)
 
 if __name__ == "__main__":
